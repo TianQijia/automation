@@ -95,3 +95,7 @@ def try_open_spotlight(max_attempts=3, input_content = 'wechat'):
             time.sleep(1)
     raise Exception("无法打开 Spotlight 搜索")
 
+def take_screenshot(directory = './temp'):
+    img = pyautogui.screenshot()
+    img.save(f"{directory}/screenshot.png")
+    print("截图已保存")

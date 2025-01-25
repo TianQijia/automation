@@ -3,10 +3,7 @@ import time
 import datetime
 import os
 import pyperclip
-from tool import duplicate_return, command_key_press, try_find_image, try_open_spotlight
-
-
-
+from tools import duplicate_return, command_key_press, try_find_image, try_open_spotlight, take_screenshot
 
 def wechat_send_message(friend_name, message, repeat=1):
     # 获取当前脚本所在目录
@@ -64,6 +61,8 @@ def wechat_send_message(friend_name, message, repeat=1):
                 continue
 
         # 关闭微信
+        time.sleep(1)
+        take_screenshot('./temp')
         time.sleep(1)
         command_key_press('w', 1)
         print('微信已关闭')
